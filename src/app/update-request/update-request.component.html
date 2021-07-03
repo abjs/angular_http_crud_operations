@@ -1,3 +1,31 @@
 <div class="all_items_to_page_center">
-    <p>update-request works!</p>
+    <form [formGroup]="getUserForm" (ngSubmit)="getUserData()">
+        <input type="text" formControlName="user_id" placeholder="user_id" required />
+        <div class="button">
+            <button type="submit" mat-button>Get user data User</button>
+        </div>
+    </form>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <input type="text" formControlName="user_id" placeholder="user_id" required />
+        <br />
+        <input type="text" formControlName="first_name" placeholder="First Name required" required />
+        <input type="text" formControlName="last_name" placeholder="Last Name" />
+        <br />
+        <input type="email" formControlName="email" placeholder="Email " />
+        <br />
+        <label for="user_status">User Status</label>
+        <select formControlName="user_status" id="user_status">
+            <option value="Active">Active</option>
+            <option value="Not Active">Not Active</option>
+        </select>
+        <label for="permissions">User Permissions</label>
+        <select formControlName="permissions" id="permissions">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <div class="button">
+            <button type="submit" mat-button>Update User</button>
+        </div>
+    </form>
 </div>

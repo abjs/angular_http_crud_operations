@@ -1,3 +1,18 @@
 <div class="all_items_to_page_center">
-    <button (click)="handleEvent()">Get Request</button>
+    <div class="data_of_users">
+
+        <div class="users" *ngFor="let item of users?.data?.responseParameter  ">
+            <ul>
+                <li>User ID : {{ item.user_id }}</li>
+                <li>First Name : {{ item.first_name }}</li>
+                <li *ngIf="item.last_name">First Name : {{ item.last_name }}</li>
+                <li>Email : {{ item.email }}</li>
+                <li>Permissions : {{ item.permissions }}</li>
+                <li>User Status : {{ item.user_status }}</li>
+                <li *ngIf="item.phone">User phone number : {{ item.phone }}</li>
+                <li>User Created At : {{ item.createdAt | date:'medium'}}</li>
+                <li>User Updated At: {{ item.updatedAt | date:'medium'}}</li>
+            </ul>
+        </div>
+    </div>
 </div>

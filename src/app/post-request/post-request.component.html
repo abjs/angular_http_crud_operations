@@ -1,3 +1,12 @@
 <div class="all_items_to_page_center">
-    <p>post-request works!</p>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <input type="text" formControlName="first_name" placeholder="First Name required" required />
+        <input type="text" formControlName="last_name" placeholder="Last Name" />
+        <br />
+        <input type="email" formControlName="email" placeholder="Email required" required />
+        <input type="test" formControlName="phone" placeholder="phone " />
+        <div class="button">
+            <button type="submit" mat-button>Register</button>
+        </div>
+    </form>
 </div>

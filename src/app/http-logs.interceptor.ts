@@ -28,6 +28,7 @@ export class HttpLogsInterceptor implements HttpInterceptor {
           errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
         }
         console.log(errorMsg);
+        alert(JSON.stringify(error.error.error.message));
         return throwError(errorMsg);
       })
     );

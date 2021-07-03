@@ -12,7 +12,7 @@ export class AppComponent {
 
   }
   handleEvent(){
-    console.log("api get Call",this.httpService.getRequest("https://jsonplaceholder.typicode.com/todos").subscribe(res=>{
+    console.log("api get Call",this.httpService.getRequest("http://localhost:3000/dev/users").subscribe(res=>{
       console.log(res)
     }) )
   }

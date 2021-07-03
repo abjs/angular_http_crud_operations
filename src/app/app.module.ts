@@ -8,6 +8,7 @@ import { GetRequestComponent } from './get-request/get-request.component';
 import { UpdateRequestComponent } from './update-request/update-request.component';
 import { DeleteRequestComponent } from './delete-request/delete-request.component';
 import { HttpLogsInterceptor } from './http-logs.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,8 +17,17 @@ import { HttpLogsInterceptor } from './http-logs.interceptor';
     UpdateRequestComponent,
     DeleteRequestComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpLogsInterceptor ,multi: true },],
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpLogsInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,3 +1,8 @@
 <div class="all_items_to_page_center">
-    <p>delete-request works!</p>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <input type="text" formControlName="user_id" placeholder="user_id" required />    
+        <div class="button">
+            <button type="submit" mat-button>Delete User</button>
+        </div>
+    </form>
 </div>
