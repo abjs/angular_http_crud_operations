@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { HttpService } from '../http.service';
 @Component({
   selector: 'app-update-request',
@@ -21,7 +22,7 @@ export class UpdateRequestComponent {
     permissions: new FormControl(''),
   });
   users: any = [];
-  private url: string = 'http://localhost:3000/dev/users';
+  private url: string = environment.apiURL;
   constructor(private httpService: HttpService) {}
   UpdateUser(url: string, data: any): void {
     this.httpService.updateRequest(url, data).subscribe((response) => {

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { HttpService } from '../http.service';
 @Component({
   selector: 'app-post-request',
@@ -14,7 +15,7 @@ export class PostRequestComponent {
     email: new FormControl(''),
     phone: new FormControl(''),
   });
-  private url: string = 'http://localhost:3000/dev/users';
+  private url: string = environment.apiURL;
   constructor(private httpService: HttpService) {}
   createNewUser(url: string, data: any): void {
     this.httpService.postRequest(url, data).subscribe((response) => {

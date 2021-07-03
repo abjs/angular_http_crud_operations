@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { HttpService } from '../http.service';
 @Component({
   selector: 'app-delete-request',
@@ -11,7 +12,7 @@ export class DeleteRequestComponent {
   form: FormGroup = new FormGroup({
     user_id: new FormControl(''),
   });
-  private url: string = 'http://localhost:3000/dev/users';
+  private url: string = environment.apiURL;
   constructor(private httpService: HttpService) {}
   deleteUser(url: string): void {
     this.httpService.deleteRequest(url).subscribe((response) => {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { HttpService } from '../http.service';
   styleUrls: ['./get-request.component.scss'],
 })
 export class GetRequestComponent implements OnInit {
-  private url: string = 'http://localhost:3000/dev/users';
+  private url: string = environment.apiURL;
   constructor(private httpService: HttpService) {}
   users: any = [];
   data: any = this.httpService.getRequest('http://localhost:3000/dev/users');
